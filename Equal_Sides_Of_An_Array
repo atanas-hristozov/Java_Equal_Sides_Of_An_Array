@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Equal Sides of an Array
+        String[] input = scanner.nextLine().split(",");
+        int sumLeft = 0;
+        int sumRight = 0;
+        int finalSum = 0;
+        int stringLenght = input.length - 1;
+        for (int i=0; i < input.length/2; i++) {
+            sumLeft = sumLeft + Integer.parseInt(input[i]);
+            stringLenght = stringLenght - i;
+            sumRight = sumRight + Integer.parseInt(input[stringLenght]);
+            stringLenght = input.length - 1;
+            if (sumLeft == sumRight) {
+                finalSum = i + 1;
+            }
+        }
+        if(finalSum == 0) {
+            finalSum = -1;
+        }
+        System.out.println(finalSum);
+    }
+}
